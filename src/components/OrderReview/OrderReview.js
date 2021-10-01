@@ -7,11 +7,13 @@ const OrderReview = () => {
   const [products] = useProducts();
   const [cart] = useCart(products);
   return (
-    <div>
-      <h1>Product: {products.length} </h1>
-      <h3>Cart: {cart.length}</h3>
-      <h2>This is Order Review</h2>
-      <Cart cart={cart}></Cart>
+    <div className="row w-75 mx-auto">
+      <div className="col-md-9">
+          
+      </div>
+      <div className="col-md-3 border-start mt-3">
+        <Cart cart={cart}></Cart>
+      </div>
     </div>
   );
 };
