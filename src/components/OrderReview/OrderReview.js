@@ -3,6 +3,7 @@ import Cart from "../Cart/Cart";
 import useCart from "../hooks/useCart";
 import useProducts from "../hooks/useProducts";
 import ReviewItem from "../ReviewItem/ReviewItem";
+import { removeFromDb } from "../../utilities/fakedb";
 
 const OrderReview = () => {
   const [products] = useProducts();
@@ -13,6 +14,8 @@ const OrderReview = () => {
     //   remove item logic here
     const newCart = cart.filter((product) => product.key !== key);
     setCart(newCart);
+    // delete from db
+    removeFromDb(key);
   };
   return (
     <div className="row w-75 mx-auto">

@@ -2,9 +2,11 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEraser } from "@fortawesome/free-solid-svg-icons";
 
+
 const ReviewItem = (props) => {
   const { name, price, quantity, key } = props.product;
   const { handleRemove } = props;
+ 
   return (
     <div className="mt-3 border-bottom">
       <h4 className="text-primary"> {name} </h4>

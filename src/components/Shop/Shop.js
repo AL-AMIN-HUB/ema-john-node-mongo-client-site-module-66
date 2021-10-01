@@ -53,7 +53,7 @@ const Shop = () => {
   return (
     <>
       <div className="bg-secondary py-2">
-        <input type="text" onChange={handleSearch} placeholder="Search Product" className="input-group form-control mx-auto w-75" />
+        <input type="text" onChange={handleSearch} placeholder="Search Your Products..." className="input-group form-control mx-auto w-75" />
       </div>
       <div className="row w-75 mx-auto">
         <div className="col-md-9">
