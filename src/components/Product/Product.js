@@ -9,22 +9,24 @@ const Product = (props) => {
   const { name, img, seller, price, stock, star } = props.product;
 
   return (
-    <div className="product">
+    <div className="d-flex align-items-center mt-5 border-bottom">
       <div>
         <img src={img} alt="" />
       </div>
-      <div>
-        <h4 className="product-name">{name}</h4>
-        <p>
+      <div className="ms-3">
+        <h4 className="text-primary">{name}</h4>
+        <p className="lead">
           <small>by: {seller}</small>
         </p>
-        <p>Price: {price}</p>
-        <p>
-          <small>only {stock} left in stock - order soon</small>
+        <p className="lead">Price: {price}</p>
+        <p className="lead">
+          <small>
+            only <b>{stock}</b> left in stock - order soon
+          </small>
         </p>
         <Rating initialRating={star} emptySymbol="far fa-star icon-color" fullSymbol="fas fa-star icon-color" readonly></Rating>
         <br />
-        <button onClick={() => props.handleAddToCart(props.product)} className=" btn btn-warning fs-4 px-4 m-2">
+        <button onClick={() => props.handleAddToCart(props.product)} className=" btn btn-warning fs-4 px-4 my-2">
           <FontAwesomeIcon icon={faShoppingCart} /> Add to cart
         </button>
       </div>

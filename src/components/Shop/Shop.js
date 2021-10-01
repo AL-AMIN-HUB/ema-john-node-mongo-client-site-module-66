@@ -55,13 +55,13 @@ const Shop = () => {
       <div className="bg-secondary py-2">
         <input type="text" onChange={handleSearch} placeholder="Search Product" className="input-group form-control mx-auto w-75" />
       </div>
-      <div className="shop-container">
-        <div className="product-container">
+      <div className="row w-75 mx-auto">
+        <div className="col-md-9">
           {displayProducts.map((product) => (
             <Product key={product.key} product={product} handleAddToCart={handleAddToCart}></Product>
           ))}
         </div>
-        <div className="cart-container">
+        <div className="col-md-3 border-start mt-3">
           <Cart cart={cart}></Cart>
         </div>
       </div>
