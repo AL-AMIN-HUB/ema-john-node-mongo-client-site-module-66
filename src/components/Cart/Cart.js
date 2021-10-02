@@ -28,6 +28,7 @@ const Cart = (props) => {
       <p className="lead fs-5">Shipping: {shipping}</p>
       <p className="lead fs-5">Tax: {tax.toFixed(2)}</p>
       <h3 className="text-danger border-top">Grand Total: {grandTotal.toFixed(2)}</h3>
+      {props.children}
     </div>
   );
 };
