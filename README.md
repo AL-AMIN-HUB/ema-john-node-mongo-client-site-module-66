@@ -4,5 +4,5 @@ This project was bootstrapped with [project live site](https://complete-ema-john
 
 ## Available Scripts
 
-In the project uses: react js , javascript, html5, bootstrap5
+In the project uses: react js , javascript, bootstrap5
 
