@@ -36,9 +36,14 @@ const OrderReview = () => {
       </div>
       <div className="col-md-3 border-start mt-3">
         <Cart cart={cart}>
-          <button onClick={handlePlaceOrder} className="btn btn-outline-primary fs-5 px-3">
-            Place Order
-          </button>
+          {/* children */}
+          {cart.length >= 1 ? (
+            <button onClick={handlePlaceOrder} className="btn btn-outline-primary fs-5 px-3">
+              Place Order
+            </button>
+          ) : (
+            <button className="btn btn-outline-primary fs-5 px-3">Place Order</button>
+          )}
         </Cart>
       </div>
     </div>
