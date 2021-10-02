@@ -4,13 +4,14 @@ import Header from "./components/Header/Header";
 import Inventory from "./components/Inventory/Inventory";
 import NotFounds from "./components/NotFounts/NotFounds";
 import OrderReview from "./components/OrderReview/OrderReview";
+import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
 import Shop from "./components/Shop/Shop";
 
 function App() {
   return (
     <div>
       <Router>
-      <Header></Header>
+        <Header></Header>
         <Switch>
           <Route exact path="/">
             <Shop></Shop>
@@ -23,6 +24,9 @@ function App() {
           </Route>{" "}
           <Route exact path="/inventory">
             <Inventory></Inventory>
+          </Route>
+          <Route exact path="/placeOrder">
+            <PlaceOrder></PlaceOrder>
           </Route>
           <Route exact path="*">
             <NotFounds></NotFounds>
