@@ -1,10 +1,12 @@
 import React from "react";
 import { Col, Form, Row, Button } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const Login = () => {
+  const location = useLocation();
   const { GoogleSignIn } = useAuth();
+  console.log(location?.state?.form);
   return (
     <div className="text-center mt-3">
       <h1>Login</h1>
