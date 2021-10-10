@@ -39,7 +39,7 @@ const Register = () => {
       <p>
         Already have an Account? <NavLink to="/login">Log in</NavLink>
         <div>----------- or -------------</div>
-        <button className="btn btn-outline-info fs-5">Google Sign In</button>
+        <button className="btn btn-outline-primary fs-5">Google Sign In</button>
       </p>
     </div>
   );

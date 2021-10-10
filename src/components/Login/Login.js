@@ -25,14 +25,14 @@ const Login = () => {
           </Col>
         </Form.Group>
         <Button variant="success" className="fs-5 px-3 mb-3" type="submit">
-          Submit
+          SUBMIT
         </Button>
       </Form>
       <p>
         New to ema-john?
         <NavLink to="/register">Create Account</NavLink>
         <div>----------- or -------------</div>
-        <button className="btn btn-outline-info fs-5">Google Sign In</button>
+        <button className="btn btn-outline-primary fs-5">Google Sign In</button>
       </p>
     </div>
   );
