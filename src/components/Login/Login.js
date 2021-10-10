@@ -1,10 +1,10 @@
 import React from "react";
 import { Col, Form, Row, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import useFirebase from "../hooks/useFirebase";
+import useAuth from "../hooks/useAuth";
 
 const Login = () => {
-  const { GoogleSignIn } = useFirebase();
+  const { GoogleSignIn } = useAuth();
   return (
     <div className="text-center mt-3">
       <h1>Login</h1>

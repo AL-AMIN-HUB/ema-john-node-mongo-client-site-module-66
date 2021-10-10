@@ -1,15 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/logo.png";
-import useFirebase from "../hooks/useFirebase";
+import useAuth from "../hooks/useAuth";
 import "./Header.css";
 
 const Header = () => {
-  const { user, logOut } = useFirebase();
+  const { user, logOut } = useAuth();
   return (
     <div className="header">
       <img className="mb-3 d-block mx-auto" src={logo} alt="" />
-      <nav className="ps-5">
+      <nav className="text-center">
         <NavLink to="/shop">Shop</NavLink>
         <NavLink to="/review">Order Review</NavLink>
         <NavLink to="/inventory">Manage Inventory</NavLink>
@@ -20,6 +20,8 @@ const Header = () => {
         ) : (
           <NavLink to="/login">Log in</NavLink>
         )}
+
+        {user?.email && <img style={{ width: "25px", borderRadius: "50%" }} src={user?.photoURL} alt="" />}
       </nav>
     </div>
   );

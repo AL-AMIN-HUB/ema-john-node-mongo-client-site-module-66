@@ -21,13 +21,13 @@ Step-1: Initial Setup
 
 -----------------------
 
-Step-2: 
+Step-2: setup component
 1. Create Login Component
 2. Create Register Component
 3. Create Route for Login and Register
 
 
-step-3:
+step-3: setup auth system
 1. set up sign in method
 2. setup sign out method
 3. user state
@@ -35,10 +35,16 @@ step-3:
 5. return necessary methods and states from useFirebase
 6. export useFirebase
 
-step-4:
+step-4: create auth context hook (useAuth)
 1. Create a auth context
 2. Create context Provider 
-3. Use Auth Provider
-4. Create useAuth Hook
+3. Set context provider context value
+4. Use Auth Provider
+5. Create useAuth Hook
+
+
+step-5: create private route
+1. Create private Route
+2. set private route
 
 */
