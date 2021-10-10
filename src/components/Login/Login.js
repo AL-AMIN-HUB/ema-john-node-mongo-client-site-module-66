@@ -1,8 +1,10 @@
 import React from "react";
 import { Col, Form, Row, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import useFirebase from "../hooks/useFirebase";
 
 const Login = () => {
+  const { GoogleSignIn } = useFirebase();
   return (
     <div className="text-center mt-3">
       <h1>Login</h1>
@@ -32,7 +34,9 @@ const Login = () => {
         New to ema-john?
         <NavLink to="/register">Create Account</NavLink>
         <div>----------- or -------------</div>
-        <button className="btn btn-outline-primary fs-5">Google Sign In</button>
+        <button onClick={GoogleSignIn} className="btn btn-outline-primary fs-5">
+          Google Sign In
+        </button>
       </p>
     </div>
   );
