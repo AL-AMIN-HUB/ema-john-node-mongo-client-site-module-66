@@ -23,9 +23,9 @@ const OrderReview = () => {
   const history = useHistory();
 
   const handlePlaceOrder = () => {
-    history.push("./placeOrder");
-    setCart([]);
-    clearTheCart();
+    // setCart([]);
+    // clearTheCart();
+    history.push("./shipping");
   };
   return (
     <div className="row w-75 mx-auto">
@@ -39,10 +39,10 @@ const OrderReview = () => {
           {/* children */}
           {cart.length >= 1 ? (
             <button onClick={handlePlaceOrder} className="btn btn-outline-primary fs-5 px-3">
-              Place Order
+              Proceed to Shipping
             </button>
           ) : (
-            <button className="btn btn-outline-primary fs-5 px-3">Place Order</button>
+            <button className="btn btn-outline-primary fs-5 px-3">Proceed to Shipping</button>
           )}
         </Cart>
       </div>

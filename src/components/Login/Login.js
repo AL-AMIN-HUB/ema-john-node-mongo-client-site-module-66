@@ -1,12 +1,20 @@
 import React from "react";
 import { Col, Form, Row, Button } from "react-bootstrap";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const Login = () => {
   const location = useLocation();
   const { GoogleSignIn } = useAuth();
-  console.log(location?.state?.form);
+  const history = useHistory();
+  const redirect_uri = location.state?.from || "/shop";
+
+  const handleGoogleLogIn = () => {
+    GoogleSignIn().then(() => {
+      history.push(redirect_uri);
+    });
+  };
+
   return (
     <div className="text-center mt-3">
       <h1>Login</h1>
@@ -36,7 +44,7 @@ const Login = () => {
         New to ema-john?
         <NavLink to="/register">Create Account</NavLink>
         <div>----------- or -------------</div>
-        <button onClick={GoogleSignIn} className="btn btn-outline-primary fs-5">
+        <button onClick={handleGoogleLogIn} className="btn btn-outline-primary fs-5">
           Google Sign In
         </button>
       </p>
