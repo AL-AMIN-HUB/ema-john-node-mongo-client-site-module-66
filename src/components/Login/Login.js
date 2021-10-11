@@ -41,7 +41,7 @@ const Login = () => {
         </Button>
       </Form>
       <p>
-        New to ema-john?
+        New to ema-john website?
         <NavLink to="/register">Create Account</NavLink>
         <div>----------- or -------------</div>
         <button onClick={handleGoogleLogIn} className="btn btn-outline-primary fs-5">
