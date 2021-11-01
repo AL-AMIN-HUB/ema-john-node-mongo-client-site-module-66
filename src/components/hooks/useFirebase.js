@@ -8,12 +8,16 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const auth = getAuth();
-  const googleProvider = new GoogleAuthProvider();
 
   const GoogleSignIn = () => {
-    return signInWithPopup(auth, googleProvider).catch((error) => {
-      setError(error.message);
+    const googleProvider = new GoogleAuthProvider();
+    signInWithPopup(auth, googleProvider).then((result) => {
+      const user = result.user;
+      setUser(user);
     });
+    /*  return signInWithPopup(auth, googleProvider).catch((error) => {
+      setError(error.message);
+    }); */
   };
 
   const logOut = () => {

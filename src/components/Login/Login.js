@@ -4,16 +4,16 @@ import { NavLink, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const Login = () => {
-  const location = useLocation();
+  // const location = useLocation();
   const { GoogleSignIn } = useAuth();
-  const history = useHistory();
-  const redirect_uri = location.state?.from || "/shop";
+  /*  const history = useHistory();
+  const redirect_uri = location.state?.from || "/shop"; */
 
-  const handleGoogleLogIn = () => {
+  /*  const handleGoogleLogIn = () => {
     GoogleSignIn().then(() => {
       history.push(redirect_uri);
     });
-  };
+  }; */
 
   return (
     <div className="text-center mt-3">
@@ -44,7 +44,7 @@ const Login = () => {
         New to ema-john website?
         <NavLink to="/register">Create Account</NavLink>
         <div>----------- or -------------</div>
-        <button onClick={handleGoogleLogIn} className="btn btn-outline-primary fs-5">
+        <button onClick={GoogleSignIn} className="btn btn-outline-primary fs-5">
           Google Sign In
         </button>
       </p>
