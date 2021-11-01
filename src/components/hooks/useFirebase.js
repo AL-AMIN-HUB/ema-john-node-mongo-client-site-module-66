@@ -1,23 +1,20 @@
 import { useEffect, useState } from "react";
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, getIdToken } from "firebase/auth";
 import initializeAuthentication from "../../Firebase/Firebase.init";
 
 initializeAuthentication();
 
 const useFirebase = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const auth = getAuth();
+  const googleProvider = new GoogleAuthProvider();
 
   const GoogleSignIn = () => {
-    const googleProvider = new GoogleAuthProvider();
-    signInWithPopup(auth, googleProvider).then((result) => {
-      const user = result.user;
-      setUser(user);
-    });
-    /*  return signInWithPopup(auth, googleProvider).catch((error) => {
+    return signInWithPopup(auth, googleProvider).catch((error) => {
       setError(error.message);
-    }); */
+    });
   };
 
   const logOut = () => {
@@ -32,8 +29,10 @@ const useFirebase = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
+        getIdToken(user).then((idToken) => localStorage.setItem("Token", idToken));
         setUser(user);
       }
+      setIsLoading(false);
     });
     return unsubscribe;
   }, [auth]);
@@ -43,6 +42,8 @@ const useFirebase = () => {
     error,
     logOut,
     GoogleSignIn,
+    isLoading,
+    setIsLoading,
   };
 };
 
